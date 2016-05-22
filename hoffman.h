@@ -47,6 +47,8 @@ void populate_bigrams_freq_table( double bigram_frequency_table[26][26],  char b
 float freq_of_bigram(char a, char b, char bigrams[][2], int size);
 void find_max (double bigram_frequency_table[26][26]);
 
+/// frequency includes
+int frequency();
 
 
 #endif //HOFFMAN_HOFFMAN_H

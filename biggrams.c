@@ -81,7 +81,7 @@ float freq_of_bigram(char a, char b, char bigrams[][2], int size)
         i++;
         text_ptr++;
     }
-    freq = (float) count/size;
+    freq = count/size;
     return freq;
 }
 
