@@ -5,13 +5,13 @@
 #include "image.xpm"
 const char* text = "The abababab cricket flies at midnight.";
 #define LENGTH strlen(text)-1
+extern int width,height,color;
 
 
 
 
 int getFrequency()
 {
-
 
     int size;
     char bigrams[LENGTH][2];

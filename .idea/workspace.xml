@@ -12,8 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76ab6af8-9b96-4b10-9379-711c7ad294e0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bitmap.c" afterPath="$PROJECT_DIR$/bitmap.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hoffman_pic.c" afterPath="$PROJECT_DIR$/hoffman_pic.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/biggrams.c" afterPath="$PROJECT_DIR$/biggrams.c" />
     </list>
     <ignored path="hoffman.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,21 +65,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="biggrams.c" pinned="false" current-in-tab="false">
+      <file leaf-file-name="biggrams.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/biggrams.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-144">
-              <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+            <state relative-caret-position="240">
+              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bitmap.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bitmap.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bitmap.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+            <state relative-caret-position="90">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -120,10 +119,10 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/frequency.c" />
         <option value="$PROJECT_DIR$/hoffman.h" />
-        <option value="$PROJECT_DIR$/biggrams.c" />
         <option value="$PROJECT_DIR$/hoffman.c" />
         <option value="$PROJECT_DIR$/hoffman_pic.c" />
         <option value="$PROJECT_DIR$/bitmap.c" />
+        <option value="$PROJECT_DIR$/biggrams.c" />
       </list>
     </option>
   </component>
@@ -133,7 +132,7 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="420" />
+    <option name="x" value="413" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="1053" />
@@ -402,7 +401,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="420" y="23" width="1280" height="1053" extended-state="0" />
+    <frame x="413" y="23" width="1280" height="1053" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -549,18 +548,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/biggrams.c">
+    <entry file="file://$PROJECT_DIR$/bitmap.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-144">
-          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+        <state relative-caret-position="90">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bitmap.c">
+    <entry file="file://$PROJECT_DIR$/biggrams.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="18" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+        <state relative-caret-position="240">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
           <folding />
         </state>
       </provider>
