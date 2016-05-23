@@ -50,5 +50,7 @@ void find_max (double bigram_frequency_table[26][26]);
 /// frequency includes
 int frequency();
 
+//picture info includes
+int printPicLines();
 
 #endif //HOFFMAN_HOFFMAN_H

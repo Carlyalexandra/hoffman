@@ -2,7 +2,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "hoffman.h"
-#include "house.xpm"
+#include "image.xpm"
 const char* text = "The abababab cricket flies at midnight.";
 #define LENGTH strlen(text)-1
 

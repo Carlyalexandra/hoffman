@@ -6,12 +6,14 @@ const char* phrase = "this is just a test of frequency\n";
 int  frequency()
 {
     char c;
-    int freq[26] = {0};
+    int freq[27] = {0};
     int total = 0;
     int i = 0;
     while(c = tolower(phrase[i]))
     {
-        freq[c-'a']++; total++; i++;
+        freq[c-'a']++;
+        total++;
+        i++;
     }
     printf("Computing letter frequency for the phrase: \n %s\n",phrase);
     for(i=0;i<26;i++)
@@ -20,3 +22,7 @@ int  frequency()
     }
     return 0;
 }
+
+
+
+//space is 32
