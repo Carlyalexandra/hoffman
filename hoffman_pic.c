@@ -8,6 +8,7 @@
 #define LENGTH strlen(text)-1
 extern char* text;
 extern char* phrase;
+extern int width,height,color;
 
 // Driver program to test above functions
 int main()

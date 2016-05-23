@@ -11,15 +11,8 @@ const char* text = "The abababab cricket flies at midnight.";
 
 int getFrequency()
 {
-//    FILE * finp =  fopen("drac-strip.txt","r");
-//    char phrase[200000];
-//    int line = 0;
-//    while(fgets (phrase, 200000,  finp) )
-//    {
-//        line++;
-//    }
-//    fclose(finp);
-//    char* text = phrase;
+
+
     int size;
     char bigrams[LENGTH][2];
     double bigram_frequency_table[26][26];
