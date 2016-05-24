@@ -44,16 +44,13 @@ void HuffmanCodes(char data[], int freq[], int size);
 
 ///biggrams includes
 int mainPopulate();
-//int populate_alpha_bigrams(char bigrams[][2]);
-//void populate_bigrams_freq_table( double bigram_frequency_table[26][26],  char bigrams[][2],  int size);
-//float freq_of_bigram(char a, char b, char bigrams[][2], int size);
-//void find_max (double bigram_frequency_table[26][26]);
 void print_bigrams(char bigrams[WIDTH*HEIGHT-1][2]);
 void populate_bigrams(char bigrams[WIDTH*HEIGHT-1][2]);
 
+int freq_of_bigram(char a, char b, char bigrams[WIDTH*HEIGHT-1][2]);
+int populate_bigrams_freq_table(int bigram_frequency_table[92][92], char bigrams[WIDTH*HEIGHT-1][2]);
+void find_max (int bigram_frequency_table[92][92]);
 
-/// frequency includes
-int frequency();
 
 //picture info includes
 int getLineInfo();
