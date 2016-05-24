@@ -1,108 +1,81 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include "hoffman.h"
 #include "image.xpm"
-const char* text = "The abababab cricket flies at midnight.";
-#define LENGTH strlen(text)-1
-extern int width,height,color;
+
+//const char* text = "The cricket flies at midnight.";
 
 
+int WIDTH,HEIGHT,COLOR;
+
+//space is 32 in dec -- code uses 92 uniques characters
 
 
-int getFrequency()
+int mainPopulate()
 {
+    getLineInfo();
+    char bigrams[WIDTH*HEIGHT-1][2];
+    populate_bigrams(bigrams);
+    print_bigrams(bigrams);
+    //int bigram_frequency_table[26][26];//only a-z considered
+    return 0;
+}
 
-    int size;
-    char bigrams[LENGTH][2];
-    double bigram_frequency_table[26][26];
-    size = populate_alpha_bigrams(bigrams);
-    populate_bigrams_freq_table(bigram_frequency_table, bigrams, size);
-    find_max (bigram_frequency_table);
+int getLineInfo()
+{
+    int j= 0;
+    char *str =  image_xpm[0], *p = str;
+    while (*p) { // While there are more characters to process...
+        if (isdigit(*p)) { // Upon finding a digit, ...
+            long val = strtol(p, &p, 10); // Read a number, ...
+            if(j== 0) {
+                WIDTH = (int)val;
+            }
+            if(j == 1) {
+                HEIGHT = (int)val;
+            }
+            if(j == 2) {
+                COLOR = (int)val;
+            }
+            j++;
+
+        } else { // Otherwise, move on to the next character.
+            p++;
+        }
+    }
+    printf("%d is width, %d is height. %d is number of character pairs.\n", WIDTH,HEIGHT,COLOR);
     return 0;
 }
 
 
-int populate_alpha_bigrams(char bigrams[][2])
+void populate_bigrams(char bigrams[WIDTH*HEIGHT-1][2])
+{
+    int k = COLOR+1;
+    int i = 0;
+    for(;k<COLOR+HEIGHT+1;k++) {
+        char *text = image_xpm[k];
+//        printf("%d %s\n", i, text);
+        char *text_ptr = text;
+        while (*(text_ptr)) {
+            bigrams[i][0] = *text_ptr;
+            bigrams[i][1] = *(text_ptr + 1);
+//            printf("%d %c%c\n", i, bigrams[i][0], bigrams[i][1]);
+            text_ptr++;
+            text_ptr++;
+            i++;
+        }
+    }
+
+}
+
+
+void print_bigrams(char bigrams[WIDTH*HEIGHT-1][2])
 {
     int i = 0;
-    const char* text_ptr = text;
-    while (*(text_ptr+1))
+    for(;i<HEIGHT*WIDTH;i++)
     {
-        if (isalpha((*text_ptr)) && isalpha((*(text_ptr+1))))
-        {
-            if ((*text_ptr) == tolower(*text_ptr) && (*(text_ptr+1)) == tolower(*(text_ptr+1)))
-            {
-                bigrams[i][0] = (*text_ptr);
-                bigrams[i][1] = (*(text_ptr+1));
-                i++;
-            }
-        }
-        text_ptr++;
-    }
-
-    return i;
-}
-
-
-void populate_bigrams_freq_table(double bigram_frequency_table[26][26], char bigrams[][2], int size)
-{
-    int i = 0;
-    int j;
-    for(i = 0; i < 26; i++)
-    {
-        for(j=0;  j < 26;  j++)
-        {
-            bigram_frequency_table[i][j] = freq_of_bigram('a'+i, 'a'+j, bigrams, size);
-        }
+        printf("%d %c%c\n", i, bigrams[i][0],bigrams[i][1]);
     }
 }
-
-
-float freq_of_bigram(char a, char b, char bigrams[][2], int size)
-{
-    int i = 0;
-    int count = 0;
-    float freq;
-    const char* text_ptr = text;
-    while(*(text_ptr+1))
-    {
-        if ((bigrams[i][0] == a) && (bigrams[i][1] == b) )
-        {
-            count++;
-        }
-        i++;
-        text_ptr++;
-    }
-    freq = count/size;
-    return freq;
-}
-
-void find_max (double bigram_frequency_table[26][26])
-{
-    int i, j, k;
-    k = 1;
-    char a, b ;
-    double max = 0;
-    printf("The 26 most frequent combinations in drac-strip.txt are:\n");
-    while(k<27)
-    {
-        max= 0;
-        for(i=0; i<26; i++)
-        {
-            for (j=0; j<26; j++)
-            {
-                if(bigram_frequency_table[i][j] > max)
-                {
-                    max = bigram_frequency_table[i][j];
-                    a = 97+i;
-                    b = 97+j;
-                }
-            }
-        }
-        printf("%d: %c%c: %f\n", k,a,b,max);
-        k++;
-        bigram_frequency_table[a-'a'][b-'a'] = 0;
-    }
-}
-

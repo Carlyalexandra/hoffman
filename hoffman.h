@@ -7,6 +7,8 @@
 
 
 
+extern int WIDTH,HEIGHT,COLOR;
+
 // A Huffman tree node
 struct MinHeapNode
 {
@@ -41,16 +43,19 @@ void HuffmanCodes(char data[], int freq[], int size);
 
 
 ///biggrams includes
-int getFrequency();
-int populate_alpha_bigrams(char bigrams[][2]);
-void populate_bigrams_freq_table( double bigram_frequency_table[26][26],  char bigrams[][2],  int size);
-float freq_of_bigram(char a, char b, char bigrams[][2], int size);
-void find_max (double bigram_frequency_table[26][26]);
+int mainPopulate();
+//int populate_alpha_bigrams(char bigrams[][2]);
+//void populate_bigrams_freq_table( double bigram_frequency_table[26][26],  char bigrams[][2],  int size);
+//float freq_of_bigram(char a, char b, char bigrams[][2], int size);
+//void find_max (double bigram_frequency_table[26][26]);
+void print_bigrams(char bigrams[WIDTH*HEIGHT-1][2]);
+void populate_bigrams(char bigrams[WIDTH*HEIGHT-1][2]);
+
 
 /// frequency includes
 int frequency();
 
 //picture info includes
-int printPicLines();
+int getLineInfo();
 
 #endif //HOFFMAN_HOFFMAN_H
